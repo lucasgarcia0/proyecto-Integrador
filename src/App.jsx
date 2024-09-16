@@ -6,7 +6,6 @@ import Recent from './pages/Recent';
 import Errors from './pages/Errors';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import SearchForm from './components/SearchForm/SearchForm';
 function App() {
   return (
     <>
