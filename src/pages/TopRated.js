@@ -12,7 +12,7 @@ class TopRated extends Component {
         this.setState({
             isLoading: true
         })
-        fetch(`https://api.themoviedb.org/3/movie/top_rated&api_key=9458a99baf5a9ba3fe341cd43217ef95`)
+        fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=9458a99baf5a9ba3fe341cd43217ef95`)
         .then((response) => response.json())
         .then((data) => {
             this.setState({
