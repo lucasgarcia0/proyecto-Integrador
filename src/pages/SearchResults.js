@@ -14,7 +14,7 @@ class SearchResults extends Component{
         this.setState({
             isLoading: true
         })
-        fetch(`https://api.themoviedb.org/3/search/movie?query=${this.props.location.state.query}&api_key=adaebcb9e821851ba063cc72531a85e7`)
+        fetch(`https://api.themoviedb.org/3/search/movie?query=${this.props.location.state.query}&api_key=9458a99baf5a9ba3fe341cd43217ef95`)
         .then((response) => response.json())
         .then((data) => {
             this.setState({

@@ -1,8 +1,11 @@
 import React from 'react'
+import Card from "../Card/Card"
+const MoviesGrid = (props) => {
+    
 
-const MoviesGrid = () => {
     return(
-        <div>{movies.map(movie => <Card movie={movie}/>)}</div>
+        <div>{props.movies.map(movie => <Card movie={movie}/>)}</div>
     )
 }
-export default MoviesGrid
+
+export default MoviesGrid;
