@@ -6,14 +6,17 @@ import Recent from './pages/Recent';
 import Errors from './pages/Errors';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import SearchForm from './components/SearchForm/SearchForm';
 function App() {
   return (
     <>
       <Header />
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={Home}/>
         <Route path="/favorites" component={Favorites} />
         <Route path="/topRated" component={TopRated} />
+        <Route path="/search" component={SearchForm} />
+
 
         <Route path="/recent" component={Recent} />
 
