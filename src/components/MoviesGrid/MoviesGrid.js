@@ -4,7 +4,7 @@ const MoviesGrid = (props) => {
     
 
     return(
-        <div>{props.movies.map(movie => <Card movie={movie}/>)}</div>
+        <div>{props.movies.map(movie => (<Card movie={movie}/>))}</div>
     )
 }
 
