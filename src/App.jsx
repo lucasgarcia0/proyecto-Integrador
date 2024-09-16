@@ -6,6 +6,7 @@ import Recent from './pages/Recent';
 import Errors from './pages/Errors';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import SearchResults from './pages/SearchResults';
 function App() {
   return (
     <>
@@ -14,7 +15,7 @@ function App() {
         <Route exact path="/" component={Home}/>
         <Route path="/favorites" component={Favorites} />
         <Route path="/topRated" component={TopRated} />
-        <Route path="/search" component={SearchForm} />
+        <Route path="/search" component={SearchResults} />
 
 
         <Route path="/recent" component={Recent} />
