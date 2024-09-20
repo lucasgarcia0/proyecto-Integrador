@@ -28,7 +28,7 @@ class Card extends Component{
         }else {
             const primerFavorito= [this.props.movie.id]
             const stringStorage= JSON.stringify(primerFavorito)
-            localStorage.setItem("favoritos", stringStorage)
+            localStorage.setitem("favoritos", stringStorage)
         }
         this.setState({
             esFavorito: true
