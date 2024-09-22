@@ -31,7 +31,7 @@ class Recent extends Component{
             {!this.state.isLoading ? 
             <>
             <h2>Recent movies:</h2>
-            <MoviesGrid movies={this.state.movies}/> 
+            <MoviesGrid movies={this.state.movies} limit={this.props.limit}/> 
             </>
             : <p>Loading...</p>}
         </>

@@ -2,22 +2,26 @@ import { Component } from "react"
 import SearchForm from "../components/SearchForm/SearchForm"
 import TopRated from "./TopRated"
 import Recent from "./Recent"
-import MoviesGrid from "../components/MoviesGrid/MoviesGrid"
+
 
 class Home extends Component{
     constructor(props){
         super(props)
         this.state = {
-
+            isLoading:true
         }
+    }
+    componentDidMount(){
+        this.setState({
+            isLoading: true
+        })
     }
     render(){
         return (
         <>
             <SearchForm history={this.props.history}/>
-            <MoviesGrid movies = {[]} limit= {5}/>
-            <TopRated />
-            <Recent />
+            <TopRated limit= {5}/>
+            <Recent limit= {5}/>
 
 
         </>
@@ -26,3 +30,8 @@ class Home extends Component{
     
 }
 export default Home
+
+//<SearchForm history={this.props.history}/>
+  //          <MoviesGrid movies = {[]} limit= {5}/>
+    //        <TopRated />
+      //      <Recent />

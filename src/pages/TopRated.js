@@ -5,7 +5,8 @@ class TopRated extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            movies: []
+            movies: [],
+            isLoading:true
         }
     }
     componentDidMount() {
@@ -29,7 +30,7 @@ class TopRated extends Component {
                 {!this.state.isLoading ?
                     <div>
                         <h2>top rated movies:</h2>
-                        <MoviesGrid movies={this.state.movies} /> 
+                        <MoviesGrid movies={this.state.movies} limit= {this.props.limit}/> 
                     </div>
                     :
                     <p>Loading...</p>}
