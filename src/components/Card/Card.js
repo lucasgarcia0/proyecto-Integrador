@@ -1,9 +1,12 @@
 import React, {Component} from "react"
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import './Card.css'
 class Card extends Component{
     constructor(props){
         super(props)
         this.state = {
-            esFavorito: false
+            esFavorito: false,
+            verMas:false
         }
     }
     componentDidMount(){
@@ -44,19 +47,34 @@ class Card extends Component{
             esFavorito: false
         })
     }
+    handleVerMas() {
+        this.setState({
+            verMas: !this.state.verMas,
+        })
+    }
     render() {
+        console.log(this.props.movie);
         return (
-            <article className="data-detail">
-                <div className="card-content">
+
+                <div className="character-card">
+                <img src={`${this.props.movie.poster_path}`} alt="" />
+                    <p>{this.props.movie.poster_path}</p>
                     <h4>{this.props.movie.title}</h4>
-                    <p>datos de ficha</p>
+                    <div className={this.state.verMas ? "mostrar" : "ocultar"}> 
+                    <p>{this.props.movie.overview}</p>
+
+                    </div>
+
+                    <button onClick={() => this.handleVerMas()}>{this.state.verMas ? "Ocultar descripcion" : "Ver descripcion"} </button>
                     
-                </div>
-                <button onClick={()=> !this.state.esFavorito ? this.agregarAFavoritos(): this.quitarFavoritos() }>
+                    <button onClick={()=> !this.state.esFavorito ? this.agregarAFavoritos(): this.quitarFavoritos() }>
                     {!this.state.esFavorito ? "agregar a favoritos": "quitar de favoritos"}
                     </button>
-                <i className="fas fa-clipboard-list fa-2x text-gray-300"></i>
-            </article>
+                    <Link to ={`/detail/${this.props.movie.id}`}>Ver detalle de pelicula</Link>
+                </div>
+                
+
+
         )
     }
 }

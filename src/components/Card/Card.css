@@ -1,0 +1,30 @@
+.character-card {
+    width: 24%;
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 10px 10px;
+    text-transform: capitalize;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+}
+.character-card p {
+    margin-top:0;
+}
+.character-card h4 {
+    margin-bottom: 0;
+}
+.character-card img {
+    width: 100%;
+}
+.character-card a{
+    color: blue;
+}
+.mostrar{
+    display: block;
+}
+.ocultar{
+    display: none;
+}

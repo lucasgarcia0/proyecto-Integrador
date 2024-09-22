@@ -2,6 +2,7 @@ import { Component } from "react"
 import SearchForm from "../components/SearchForm/SearchForm"
 import TopRated from "./TopRated"
 import Recent from "./Recent"
+import MoviesGrid from "../components/MoviesGrid/MoviesGrid"
 
 class Home extends Component{
     constructor(props){
@@ -14,8 +15,9 @@ class Home extends Component{
         return (
         <>
             <SearchForm history={this.props.history}/>
-            <TopRated/>
-            <Recent/>
+            <MoviesGrid movies = {[]} limit= {5}/>
+            <TopRated />
+            <Recent />
 
 
         </>
