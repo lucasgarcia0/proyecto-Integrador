@@ -57,8 +57,7 @@ class Card extends Component{
         return (
 
                 <div className="character-card">
-                <img src={`${this.props.movie.poster_path}`} alt="" />
-                    <p>{this.props.movie.poster_path}</p>
+                <img src={`https://image.tmdb.org/t/p/w500${this.props.movie.poster_path}`} alt="" />
                     <h4>{this.props.movie.title}</h4>
                     <div className={this.state.verMas ? "mostrar" : "ocultar"}> 
                     <p>{this.props.movie.overview}</p>
@@ -70,7 +69,7 @@ class Card extends Component{
                     <button onClick={()=> !this.state.esFavorito ? this.agregarAFavoritos(): this.quitarFavoritos() }>
                     {!this.state.esFavorito ? "agregar a favoritos": "quitar de favoritos"}
                     </button>
-                    <Link to ={`/detail/${this.props.movie.id}`}>Ver detalle de pelicula</Link>
+                    <Link to ={`/movie/id/${this.props.movie.id}`}>Ver detalle de pelicula</Link>
                 </div>
                 
 
