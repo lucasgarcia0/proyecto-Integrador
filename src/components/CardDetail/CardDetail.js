@@ -1,7 +1,6 @@
 import React, {Component} from "react"
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import './Card.css'
-class Card extends Component{
+class CardDetail extends Component{
     constructor(props){
         super(props)
         this.state = {
@@ -57,11 +56,15 @@ class Card extends Component{
         return (
 
                 <div className="character-card">
-                <img src={`https://image.tmdb.org/t/p/w500${this.props.movie.poster_path}`} alt="" />
+                    <img src={`https://image.tmdb.org/t/p/w500${this.props.movie.poster_path}`} alt="" />
                     <h4>{this.props.movie.title}</h4>
+                    <br></br>
+                    <p>Calificación: {this.props.movie.vote_average}</p>
+                    <p>Genero: {this.props.movie.genres[0].name}</p>
+                    <p>Fecha de estreno: {this.props.movie.release_date}</p>
+                    <p>Duracion: {this.props.movie.runtime} minutos</p>
                     <div className={this.state.verMas ? "mostrar" : "ocultar"}> 
-                    <p>{this.props.movie.overview}</p>
-
+                        <p>{this.props.movie.overview}</p>
                     </div>
 
                     <button onClick={() => this.handleVerMas()}>{this.state.verMas ? "Ocultar sinopsis" : "Ver sinopsis"} </button>
@@ -69,7 +72,6 @@ class Card extends Component{
                     <button onClick={()=> !this.state.esFavorito ? this.agregarAFavoritos(): this.quitarFavoritos() }>
                     {!this.state.esFavorito ? "Agregar a favoritos": "Quitar de favoritos"}
                     </button>
-                    <Link to ={`/movie/id/${this.props.movie.id}`}>Ver detalle de pelicula</Link>
                 </div>
                 
 
@@ -78,4 +80,4 @@ class Card extends Component{
     }
 }
 
-export default Card
+export default CardDetail

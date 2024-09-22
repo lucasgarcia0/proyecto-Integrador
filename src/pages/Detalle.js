@@ -1,5 +1,6 @@
 import { Component } from "react";
 import Card from "../components/Card/Card";
+import CardDetail from "../components/CardDetail/CardDetail";
 
 class Detalle extends Component {
     constructor(props){
@@ -26,7 +27,7 @@ class Detalle extends Component {
         const { movie, isLoading } = this.state;
         return(
             <div>
-                {isLoading ? <p>Loading...</p> : <Card movie={movie} />}
+                {isLoading ? <p>Loading...</p> : <CardDetail movie={movie} />}
             </div>
         )
     }
