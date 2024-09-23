@@ -1,8 +1,9 @@
 .character-card {
     width: 24%;
     border-radius: 4px;
-    background-color: #fff;
+    background-color:  rgb(168, 221, 245);
     padding: 10px 10px;
+    margin-bottom: 17px;
     text-transform: capitalize;
     display: flex;
     flex-wrap: wrap;

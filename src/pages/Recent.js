@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import MoviesGrid from "../components/MoviesGrid/MoviesGrid"
+import Filter from "../components/Filter/Filter"
+
 
 class Recent extends Component{
     constructor(props){
@@ -7,6 +9,7 @@ class Recent extends Component{
 
         this.state = {
             movies: [],
+            moviesFiltrado: [],
             isLoading: true,
         }
     }
@@ -19,10 +22,14 @@ class Recent extends Component{
         .then((data) => {
             this.setState({
                 movies: data.results,
+                moviesFiltrado: data.results,
                 isLoading: false
             })
         })
         .catch((e) => console.log(e))
+    }
+    handleFilter = (filteredMovies) => {
+        this.setState({ moviesFiltrado: filteredMovies });
     }
 
     render(){
@@ -31,7 +38,8 @@ class Recent extends Component{
             {!this.state.isLoading ? 
             <>
             <h2>Recent movies:</h2>
-            <MoviesGrid movies={this.state.movies} limit={this.props.limit}/> 
+            <Filter onFilter={this.handleFilter} movies= {this.state.movies}/>
+            <MoviesGrid movies={this.state.moviesFiltrado} limit={this.props.limit}/> 
             </>
             : <p>Loading...</p>}
         </>

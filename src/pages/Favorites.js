@@ -5,7 +5,8 @@ class Favorites extends Component {
     constructor() {
         super()
         this.state = {
-            movies:[]
+            movies:[],
+            NoFav:false
         }
     }
     componentDidMount(){
@@ -29,7 +30,10 @@ class Favorites extends Component {
     render() {
         return (
             <>
+            {this.state.movies.length>0 ? 
                 <MoviesGrid movies= {this.state.movies}/>
+                : <p> No hay peliculas favoritas</p>
+            }
             </>
         )
     }

@@ -1,5 +1,5 @@
 import React, {Component} from "react"
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import "./CardDetail.css"
 class CardDetail extends Component{
     constructor(props){
         super(props)
@@ -54,6 +54,7 @@ class CardDetail extends Component{
     render() {
         console.log(this.props.movie);
         return (
+            <section className= "detallePadre">
 
                 <div className="character-card">
                     <img src={`https://image.tmdb.org/t/p/w500${this.props.movie.poster_path}`} alt="" />
@@ -73,7 +74,7 @@ class CardDetail extends Component{
                     {!this.state.esFavorito ? "Agregar a favoritos": "Quitar de favoritos"}
                     </button>
                 </div>
-                
+                </section>
 
 
         )
