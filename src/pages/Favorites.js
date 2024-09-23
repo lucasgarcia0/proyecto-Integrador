@@ -5,36 +5,38 @@ class Favorites extends Component {
     constructor() {
         super()
         this.state = {
-            movies:[],
-            NoFav:false
+            movies: [],
+            NoFav: false
         }
     }
-    componentDidMount(){
-        const storage= localStorage.getItem("favoritos")
-        if (storage!== null) {
-            const parsedStorage= JSON.parse(storage)
+    componentDidMount() {
+        const storage = localStorage.getItem("favoritos")
+        if (storage !== null) {
+            const parsedStorage = JSON.parse(storage)
             Promise.all(
-                parsedStorage.map((id)=> 
-                fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=31e421d77201e7a1eefe33f85b67fa3b`)
-                .then((response)=> response.json())
-                
-                .then((data)=>{
-                    this.setState({
-                        movies: [...this.state.movies, data]
-                    })
-                    console.log(data);
-                })
+                parsedStorage.map((id) =>
+                    fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=31e421d77201e7a1eefe33f85b67fa3b`)
+                        .then((response) => response.json())
                 )
             )
+
+            .then((data) => {
+                this.setState({
+                    movies: data
+                })
+                console.log(data);
+            })
+
+
         }
     }
     render() {
         return (
             <>
-            {this.state.movies.length>0 ? 
-                <MoviesGrid movies= {this.state.movies}/>
-                : <p> No hay peliculas favoritas</p>
-            }
+                {this.state.movies.length > 0 ?
+                    <MoviesGrid movies={this.state.movies} />
+                    : <p> No hay peliculas favoritas</p>
+                }
             </>
         )
     }
