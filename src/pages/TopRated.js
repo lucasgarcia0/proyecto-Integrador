@@ -5,6 +5,7 @@ import Filter from "../components/Filter/Filter"
 class TopRated extends Component {
     constructor(props) {
         super(props)
+
         this.state = {
             movies: [],
             moviesFiltrado: [],
@@ -30,7 +31,18 @@ class TopRated extends Component {
     handleFilter = (filteredMovies) => {
         this.setState({ moviesFiltrado: filteredMovies });
     }
-
+    handleLoadMore(){
+        fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=9458a99baf5a9ba3fe341cd43217ef95&page=${this.state.actualPage}`)
+        .then((response) => response.json())
+        .then((data) => {
+            this.setState({
+                movies: this.state.movies,
+                moviesFiltrado: this.state.moviesFiltrado.concat(data.results),
+                actualPage: this.state.actualPage + 1,
+                isLoading: false
+            })
+        })
+    }
     render() {
         return (
             <>
@@ -42,6 +54,8 @@ class TopRated extends Component {
                     </div>
                     :
                     <p>Loading...</p>}
+                    {this.props.limit !== 5 ? <button onClick={() => this.handleLoadMore()}>Cargar más</button> : <p></p>}
+
             </>
         )
     }

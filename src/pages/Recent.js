@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import MoviesGrid from "../components/MoviesGrid/MoviesGrid"
 import Filter from "../components/Filter/Filter"
 
-
 class Recent extends Component{
     constructor(props){
         super(props)
