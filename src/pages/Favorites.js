@@ -17,6 +17,7 @@ class Favorites extends Component {
                 parsedStorage.map((id)=> 
                 fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=31e421d77201e7a1eefe33f85b67fa3b`)
                 .then((response)=> response.json())
+                
                 .then((data)=>{
                     this.setState({
                         movies: [...this.state.movies, data]

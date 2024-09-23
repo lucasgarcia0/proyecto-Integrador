@@ -64,12 +64,12 @@ class Card extends Component{
 
                     </div>
 
-                    <button onClick={() => this.handleVerMas()}>{this.state.verMas ? "Ocultar sinopsis" : "Ver sinopsis"} </button>
+                    <button onClick={() => this.handleVerMas()} className ="more">{this.state.verMas ? "Ocultar sinopsis" : "Ver sinopsis"} </button>
                     
-                    <button onClick={()=> !this.state.esFavorito ? this.agregarAFavoritos(): this.quitarFavoritos() }>
+                    <button onClick={()=> !this.state.esFavorito ? this.agregarAFavoritos(): this.quitarFavoritos() } className ="more">
                     {!this.state.esFavorito ? "Agregar a favoritos": "Quitar de favoritos"}
                     </button>
-                    <Link to ={`/movie/id/${this.props.movie.id}`}>Ver detalle de pelicula</Link>
+                    <Link to ={`/movie/id/${this.props.movie.id}`} className ="link" >Ver detalle de pelicula</Link>
                 </div>
                 
 

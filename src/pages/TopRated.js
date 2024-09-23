@@ -8,14 +8,15 @@ class TopRated extends Component {
         this.state = {
             movies: [],
             moviesFiltrado: [],
-            isLoading:true
+            isLoading:true,
+            actualPage: 1
         }
     }
     componentDidMount() {
         this.setState({
             isLoading: true
         })
-        fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=9458a99baf5a9ba3fe341cd43217ef95`)
+        fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=9458a99baf5a9ba3fe341cd43217ef95&page=${this.state.actualPage}`)
             .then((response) => response.json())
             .then((data) => {
                 this.setState({

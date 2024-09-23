@@ -22,9 +22,10 @@ class SearchForm extends Component {
     render(){
         return(
             <>
-                <div>
-                    <form onSubmit={(e) => this.handleCancelSubmit(e)}>
+                <div className="search">
+                    <form onSubmit={(e) => this.handleCancelSubmit(e)} className="search">
                         <input 
+                            placeholder="Buscar pelicula"
                             name="query"
                             onChange={(e) => this.handleFormChange(e)}
                             value={this.state.query}
