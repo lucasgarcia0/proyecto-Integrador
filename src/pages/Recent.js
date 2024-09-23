@@ -11,13 +11,14 @@ class Recent extends Component{
             movies: [],
             moviesFiltrado: [],
             isLoading: true,
+            actualPage: 1
         }
     }
     componentDidMount(){
         this.setState({
             isLoading: true
         })
-        fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=9458a99baf5a9ba3fe341cd43217ef95`)
+        fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=9458a99baf5a9ba3fe341cd43217ef95&page=${this.state.actualPage}`)
         .then((response) => response.json())
         .then((data) => {
             this.setState({
@@ -31,7 +32,18 @@ class Recent extends Component{
     handleFilter = (filteredMovies) => {
         this.setState({ moviesFiltrado: filteredMovies });
     }
-
+    handleLoadMore(){
+        fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=9458a99baf5a9ba3fe341cd43217ef95&page=${this.state.actualPage}`)
+        .then((response) => response.json())
+        .then((data) => {
+            this.setState({
+                movies: this.state.movies,
+                moviesFiltrado: this.state.moviesFiltrado.concat(data.results),
+                actualPage: this.state.actualPage + 1,
+                isLoading: false
+            })
+        })
+    }
     render(){
         return(
         <>
@@ -42,6 +54,7 @@ class Recent extends Component{
             <MoviesGrid movies={this.state.moviesFiltrado} limit={this.props.limit}/> 
             </>
             : <p>Loading...</p>}
+            {this.props.limit !== 5 ? <button onClick={() => this.handleLoadMore()}>Cargar más</button> : <p></p>}
         </>
         )
     }

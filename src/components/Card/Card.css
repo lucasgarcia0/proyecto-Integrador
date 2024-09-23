@@ -1,31 +1,39 @@
-.character-card {
+.character-card{
+    color: #777;
+    font-size: 20px;
+    flex-direction: row;
+    padding: 10px;
+    margin-bottom: 20px;
     width: 24%;
-    border-radius: 4px;
-    background-color:  rgb(168, 221, 245);
-    padding: 10px 10px;
-    margin-bottom: 17px;
-    text-transform: capitalize;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: left;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
+    margin-right: 10px;
+}
+.character-card img{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px; 
+}
+.character-card:hover,
+.active{
+box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
 }
 .character-card p {
-    margin-top:0;
+    margin: 3px 0;
 }
-.character-card h4 {
-    margin-bottom: 0;
+.character-card h2 {
+    margin: 2px 0;
 }
-.character-card img {
-    width: 100%;
-}
-.character-card a{
+.more{
     color: blue;
+    text-align: right;
 }
+.more:hover,
+
 .mostrar{
-    display: block;
+    display: block
 }
 .ocultar{
-    display: none;
+    display: none
 }

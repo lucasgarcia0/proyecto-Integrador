@@ -1,7 +1,19 @@
-.Card-grider {
+.card-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
-    color: #666;
+    justify-content: flex-start;
+    background-color: whitesmoke;
+}
+.card-container .character-card {
+    width: 19%;
+    border-radius: 4px;
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    color: gray;
+}
+h4 {
+    font-size: 24px
 }
