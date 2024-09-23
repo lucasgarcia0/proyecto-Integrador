@@ -5,6 +5,7 @@ import Filter from "../components/Filter/Filter"
 class TopRated extends Component {
     constructor(props) {
         super(props)
+        console.log(props);
 
         this.state = {
             movies: [],

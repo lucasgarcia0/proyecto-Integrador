@@ -122,17 +122,14 @@ main {
 }
 
 
-/* Characters Container */
 .card-container {
     margin-top: 20px;
     padding: 0 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
     align-items: flex-start;
 }
-/* Characters Card */
 .mostrar{
     display: block;
 }
