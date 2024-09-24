@@ -27,6 +27,7 @@ class SearchResults extends Component{
         <>
             {!this.state.isLoading ? 
             <>
+            <h2 className="titulo">Resultados de tu busqueda: "{this.props.location.state.query}"</h2>
             <MoviesGrid movies={this.state.movies}/> 
             </>
             : <p>Loading...</p>}

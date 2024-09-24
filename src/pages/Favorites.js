@@ -34,7 +34,10 @@ class Favorites extends Component {
         return (
             <>
                 {this.state.movies.length > 0 ?
+                    <>
+                    <h2 className="titulo">Tus peliculas favoritas son:</h2>
                     <MoviesGrid movies={this.state.movies} />
+                    </>
                     : <p> No hay peliculas favoritas</p>
                 }
             </>
