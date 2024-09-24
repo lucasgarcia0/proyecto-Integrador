@@ -15,8 +15,10 @@ a {
 body {
     font-family: Nunito;
     margin: 0;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    padding-bottom: 150px;
+    background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fHdoaXRlJTIwYWJzdHJhY3R8ZW58MHx8fHwxNjc0MTY4ODAy&ixlib=rb-1.2.1&q=80&w=1080');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     margin-left: 10px;
     margin-right: 10px;
 }
@@ -129,6 +131,13 @@ main {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
+}
+.ver-todas{
+    color: rgb(36, 146, 201);
+    margin-left: 10px;
+}
+.titulo{
+    color: rgb(36, 146, 201);
 }
 .mostrar{
     display: block;

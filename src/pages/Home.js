@@ -22,11 +22,17 @@ class Home extends Component{
         <>
             <SearchForm history={this.props.history}/>
             <TopRated limit= {5}/>
-            <Link to = "/topRated">Ver todas</Link>
+            <Link to = "/topRated" className="ver-todas">
+                <button>
+                    Ver todas
+                </button>
+            </Link>
             <Recent limit= {5}/>
-            <Link to = "/recent">Ver todas</Link>
-
-
+            <Link to = "/recent" className="ver-todas">
+                <button>
+                    Ver todas
+                </button>
+            </Link>
         </>
     )
     }

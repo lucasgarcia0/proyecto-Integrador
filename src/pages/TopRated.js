@@ -49,7 +49,7 @@ class TopRated extends Component {
             <>
                 {!this.state.isLoading ?
                     <div>
-                        <h2>Top rated movies:</h2>
+                        <h2 className="titulo">Top rated movies:</h2>
                         <Filter onFilter={this.handleFilter} movies= {this.state.movies}/>
                         <MoviesGrid movies={this.state.moviesFiltrado} limit= {this.props.limit}/> 
                     </div>

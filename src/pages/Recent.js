@@ -48,7 +48,7 @@ class Recent extends Component{
         <>
             {!this.state.isLoading ? 
             <>
-            <h2>Recent movies:</h2>
+            <h2 className='titulo'>Recent movies:</h2>
             <Filter onFilter={this.handleFilter} movies= {this.state.movies}/>
             <MoviesGrid movies={this.state.moviesFiltrado} limit={this.props.limit}/> 
             </>
